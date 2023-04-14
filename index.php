@@ -22,3 +22,11 @@ define("PI",3.1415);
 echo PI;
 echo "<br>";
 echo 10*10*PI;
+
+echo "<hr>";
+//可變變數
+$name='mack';
+
+$$name=55;
+
+echo $mack;
