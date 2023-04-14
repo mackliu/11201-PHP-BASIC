@@ -48,3 +48,7 @@ $name='劉勤永';
 */
 
 echo "<hr>";
+$score=40;
+$level=($score >= 60)?'及格':'不及格';
+
+echo $level;
