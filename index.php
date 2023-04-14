@@ -15,6 +15,10 @@ echo "</span>";
 echo "<span style='color:red;font-size:24px'><br>";
 echo "總價是：";
 echo $total;
-echo "</span>";
+echo "</span><br>";
 
+define("PI",3.1415);
 
+echo PI;
+echo "<br>";
+echo 10*10*PI;
