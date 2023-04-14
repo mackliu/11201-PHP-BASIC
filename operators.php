@@ -52,3 +52,21 @@ $score=40;
 $level=($score >= 60)?'及格':'不及格';
 
 echo $level;
+
+echo "<hr>";
+$a='貓';
+$b='狗';
+echo '$a='.$a;
+echo "<br>";
+echo '$b='.$b;
+echo "<br>";
+echo "交換後:<br>";
+
+$tmp=$a;
+$a=$b;
+$b=$tmp;
+
+echo '$a='.$a;
+echo "<br>";
+echo '$b='.$b;
+echo "<br>";
