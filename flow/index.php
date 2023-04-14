@@ -1,19 +1,24 @@
 <?php
-$score=90;
-
-if($score>60){
-    echo "成績=".$score;
-    echo "<br>";
-    echo "恭喜及格了~~";
+$score=50;
+echo "你的成績為:".$score;
+echo "<BR>";
+if($score >= 90){
+    $level="A";
+}else if($score >= 80){
+    $level="B";
+}else if($score >= 70){
+    $levle="C";
+}else if($score >= 60){
+    $level="D";
 }else{
-    echo "成績=".$score;
-    echo "<br>";
-    echo "請再接再厲~~";
+    $level="E";
 }
 
 echo "<hr>";
 
-$level="B";
+echo "成績等級為:".$level;
+echo "<BR>";
+echo "成績評語為:";
 
 switch($level){
     case "A":
