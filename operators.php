@@ -35,3 +35,16 @@ echo "<br>";
 echo " % => ";
 echo $num1%$num2;
 echo "<br>";
+
+echo "<hr>";
+
+$name='劉勤永';
+
+['name'=>'劉勤永'];
+
+/*
+=>  //胖箭頭  fat arrow
+->  //瘦箭頭  arrow
+*/
+
+echo "<hr>";
