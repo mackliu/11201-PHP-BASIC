@@ -73,18 +73,22 @@ for($i=0;$i<4;$i++){
 
 <h3>菱形二</h3>
 <?php
+$n=18;
+
+$n=($n%2==0)?$n+1:$n;
+
 $tmp=0;
-for($i=0;$i<9;$i++){
+for($i=0;$i<$n;$i++){
 
     /* if($i<5){
         $tmp=$i;
     }else{
         $tmp=8-$i;
     } */
-    
-    $tmp=($i<5)?$i:8-$i;
 
-    for($j=0;$j<(4-$tmp);$j++){
+    $tmp=($i<ceil($n/2))?$i:$n-1-$i;
+
+    for($j=0;$j<(ceil($n/2)-1-$tmp);$j++){
         echo "&nbsp;";
     }
 
