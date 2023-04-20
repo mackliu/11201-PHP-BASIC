@@ -104,7 +104,7 @@ for($i=0;$i<$n;$i++){
 <h3>矩形</h3>
 <?php
 
-$n=13;
+$n=9;
 
 for($i=0;$i<$n;$i++){
 
@@ -112,6 +112,28 @@ for($i=0;$i<$n;$i++){
         if($i==0 || $i==($n-1)){
             echo "*";
         }else if($j==0 || $j==$n-1){
+            echo "*";
+        }else{
+            echo "&nbsp;";
+        }
+    }
+
+    echo "<br>";
+}
+
+
+?>
+<h3>矩形對角線</h3>
+<?php
+
+$n=9;
+
+for($i=0;$i<$n;$i++){
+
+    for($j=0;$j<$n;$j++){
+        if($i==0 || $i==($n-1)){
+            echo "*";
+        }else if($j==0 || $j==$n-1 || $i==$j || $i==$n-1-$j){
             echo "*";
         }else{
             echo "&nbsp;";
