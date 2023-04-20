@@ -64,5 +64,34 @@
         }
         ?>
     </table>
+    <hr>
+    <table>
+        <?php
+        // 使用 for 迴圈產生九九乘法表，$i 代表第一個數字，$j 代表第二個數字
+        for ($i = 0; $i <= 9; $i++) {
+            // 使用 <tr> 元素代表表格中的一行
+            echo "<tr>";
+            for ($j = 0; $j <= 9; $j++) {
+
+                echo "<td>";
+                //  根據不同的條件，來決定每一格中要出現的內容
+                    if($i==0 && $j==0){
+                        echo "&nbsp;";
+                    }else if($i==0){
+                        echo $j;
+                    }else if($j==0){
+                        echo $i;
+                    }else if($j<=$i){
+                        echo $i * $j;
+                    }
+                echo "</td>";
+
+                //echo "<td>" . $i . " x " . $j . " = " . $i * $j . "</td>";
+            }
+            // 使用 </tr> 元素代表表格中的一行結束
+            echo "</tr>";
+        }
+        ?>
+    </table>
 </body>
 </html>
