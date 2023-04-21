@@ -1,3 +1,14 @@
+<style>
+    table{
+        border-collapse: collapse;
+        width:50%;
+    }
+    td{
+        padding:5px 10px;
+        border:1px solid #ccc;
+    }
+</style>
+
 <?php
 
 $students=[
@@ -12,6 +23,12 @@ $students=[
          '數學'=>54,
          '地理'=>81,
          '歷史'=>71,
+        ],
+'john'=>['國文'=>45,
+         '英文'=>60,
+         '數學'=>68,
+         '地理'=>70,
+         '歷史'=>62,
         ],
 
 
@@ -37,4 +54,23 @@ $subjects=[
     '歷史'=>[],
 ];
 
+echo "<table>";
+echo "<tr>";
+echo "<td></td>";
+echo "<td>國文</td>";
+echo "<td>英文</td>";
+echo "<td>數學</td>";
+echo "<td>地理</td>";
+echo "<td>歷史</td>";
+echo "</tr>";
+foreach ($students as $stu => $scores) {
+    echo "<tr>";
+    echo "<td>$stu</td>";
+    foreach($scores as $sub => $score){
+        echo "<td>$score</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
 ?>
