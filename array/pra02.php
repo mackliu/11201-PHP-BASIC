@@ -60,9 +60,46 @@ foreach($lotto as $num){
 echo "<br>";
 echo "<span class='area-2'>".rand(1,8)."</span>";
 
+echo "<hr>";
+echo "<h1>找出五百年內的閏年</h1>";
+echo "2023 ~ 2523 <br>";
 
-echo "<p>&nbsp;</p>";
-echo "<p>&nbsp;</p>";
-echo "<p>&nbsp;</p>";
-echo "<p>&nbsp;</p>";
-echo "<p>&nbsp;</p>";
+$years=[];
+
+for($year=2023;$year<2523;$year++){
+    
+    if(($year %4 == 0) && ($year %100 !=0) || ($year % 400 ==0)){
+        $years[]=$year;
+    }
+}
+
+foreach($years as $year){
+    echo $year . "<br>";
+}
+
+$t=2351;
+
+if(in_array($t,$years)){
+    echo $t."是閏年";
+}else{
+    echo $t."是平年";
+
+}
+if(array_search($t,$years)!=false){
+    echo $t."是閏年";
+}else{
+    echo $t."是平年";
+
+}
+
+
+?>
+
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
