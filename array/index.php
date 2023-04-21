@@ -58,11 +58,61 @@ echo "<pre>";
 print_r($d);
 echo "</pre>";
 
-$result=sort($d);
+sort($d);
 
 echo "<pre>";
 print_r($d);
 echo "</pre>";
 
-echo "<br>";
-echo $result;
+rsort($d);
+
+echo "<pre>";
+print_r($d);
+echo "</pre>";
+
+$fill=array_fill(0,25,'hi');
+echo "<pre>";
+print_r($fill);
+echo "</pre>";
+
+echo array_search(9,$d);
+echo $d[4];
+
+$keys=array_keys($d);
+
+echo "<pre>";
+print_r($keys);
+echo "</pre>";
+
+$keys=array_keys($a);
+
+echo "<pre>";
+print_r($keys);
+echo "</pre>";
+
+$merge=array_merge($a,$b);
+echo "<pre>";
+print_r($merge);
+echo "</pre>";
+
+
+$seA=serialize($a);
+echo $seA;
+$ueA=unserialize($seA);
+echo "<pre>";
+print_r($ueA);
+echo "</pre>";
+
+$s=implode(',',$a);
+echo $s;
+$array=explode(',',$s);
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+
+echo "<p>&nbsp;</p>";
+echo "<p>&nbsp;</p>";
+echo "<p>&nbsp;</p>";
+echo "<p>&nbsp;</p>";
+echo "<p>&nbsp;</p>";
