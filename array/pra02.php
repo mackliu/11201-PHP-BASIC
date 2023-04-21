@@ -113,8 +113,30 @@ echo "<br>天干地支年為".$skyland[$index];
 print_r($skyland);
 echo "</pre>"; */
 
-?>
+echo "<hr>";
+echo "<h1>反轉陣列</h1>";
+echo '給定陣列$a=[2,4,6,1,8]  反轉後  $a=[8,1,6,4,2]';
 
+
+$a=[2,4,6,1,8,9];
+echo "<pre>";
+echo "原陣列:<br>";
+print_r($a);
+echo "</pre>";
+$times=ceil(count($a)/2);
+$maxIndex=count($a)-1;
+
+for($i=0;$i<$times;$i++){
+    $tmp=$a[$i];
+    $a[$i]=$a[$maxIndex-$i];
+    $a[$maxIndex-$i]=$tmp;
+}
+
+echo "<pre>";
+echo "反轉陣列:<br>";
+print_r($a);
+echo "</pre>";
+?>
 
 
 
