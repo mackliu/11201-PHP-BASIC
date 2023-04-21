@@ -92,6 +92,26 @@ if(array_search($t,$years)!=false){
 
 }
 
+echo "<hr>";
+echo "<h1>計算天干地支年</h1>";
+echo "2023 ~ 2523 <br>";
+
+$sky=["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"];
+$land=["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
+
+$skyland=[];
+for($i=0;$i<60;$i++){
+    $skyland[]=$sky[$i%10] . $land[$i%12];
+}
+
+$year=2053;
+$startYear=1024;  //甲子年
+echo "給定西元年".$year;
+$index=($year-$startYear)%60;
+echo "<br>天干地支年為".$skyland[$index];
+/* echo "<pre>";
+print_r($skyland);
+echo "</pre>"; */
 
 ?>
 
