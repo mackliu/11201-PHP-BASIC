@@ -20,7 +20,7 @@ print_r($b);
 echo "</pre>";
 
 $c=["A","B",'C'];
-$c[]="D";
+//$c[]="D";
 $c['total']=4;
 $c[]="E";
 $c['total']=5;
@@ -36,3 +36,33 @@ echo "<br>";
 echo $b[0];
 echo "<br>";
 echo $c[2];
+echo "<hr>";
+$dd="AAA";
+$check=is_array($dd);
+if($check){
+    echo "是陣列";
+}else{
+    echo "不是陣列";
+}
+
+if(in_array("D",$c)){
+    echo "D 在陣列中";
+}else{
+    echo "D 不在陣列中";
+
+}
+
+$d=["A",9,"C",21,77,3];
+
+echo "<pre>";
+print_r($d);
+echo "</pre>";
+
+$result=sort($d);
+
+echo "<pre>";
+print_r($d);
+echo "</pre>";
+
+echo "<br>";
+echo $result;
