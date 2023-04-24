@@ -10,12 +10,14 @@
 <h2>月曆</h2>
 <?php
 $today=strtotime("now");
-$month=date("n");
-$days=date("t");
-$firstDate=date("Y-n-1");
-$finalDate=date("Y-n-t");
+$month=date("n",$today);
+$days=date("t",$today);
+$firstDate=date("Y-n-1",$today);
+$finalDate=date("Y-n-t",$today);
 $firstDateWeek=date("w",strtotime($firstDate));
+$finalDateWeek=date("w",strtotime($finalDate));
 $weeks=ceil(($days+$firstDateWeek)/7);
+$firstWeekSpace=$firstDateWeek-1;
 echo "月:".$month;
 echo "<br>";
 echo "天數:".$days;
@@ -25,6 +27,8 @@ echo "<br>";
 echo "最後1天:".$finalDate;
 echo "<br>";
 echo "第1天星期:".$firstDateWeek;
+echo "<br>";
+echo "最後1天星期:".$finalDateWeek;
 echo "<br>";
 echo "周數:".$weeks;
 echo "<br>";
@@ -43,7 +47,21 @@ for($i=0;$i<$weeks;$i++){
     echo "<tr>";
     for($j=0;$j<7;$j++){
         echo "<td>";
-
+        if($i==0){
+            if($j<$firstDateWeek){
+                echo "&nbsp;";
+            }else{
+                echo $j+7*$i-$firstWeekSpace;
+            }
+        }else if($i==$weeks-1){
+            if($j>$finalDateWeek){
+                echo "&nbsp;";
+            }else{
+                echo $j+7*$i-$firstWeekSpace;
+            }
+        }else{
+            echo $j+7*$i-$firstWeekSpace;
+        }
         echo "</td>";
     }
     echo "</tr>";
