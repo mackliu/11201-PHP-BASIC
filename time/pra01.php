@@ -51,7 +51,19 @@ echo "今天是西元";
 echo date("Y年n月j日");
 echo date("N")>=6?"是假日":"是工作日";
 ?>
+<h2>利用迴圈來計算連續五個周一的日期</h2>
+<?php
+$today=strtotime("now");
+$week=date("N",$today);
+$gap=1-$week;
+$seconds=strtotime("$gap days",$today);
+//$monday=date("Y-m-d l",$seconds);
 
+for($i=0;$i<5;$i++){
+    echo date("Y-m-d l" ,strtotime("+$i week",$seconds));
+    echo "<br>";
+}
+?>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
