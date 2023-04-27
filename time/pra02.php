@@ -1,11 +1,14 @@
 <style>
     table{
         border-collapse: collapse;
+        /* border-spacing: 0; */
     }
     td{
         border:1px solid gray;
         padding:5px 10px;
+        
     }
+    
 </style>
 <h2>月曆</h2>
 <?php
@@ -108,3 +111,39 @@ for($i=0;$i<count($days);$i++){
 }
 echo "</table>";
 
+?>
+<style>
+  .calendar > div{
+        border:1px solid #ccc;
+        width:calc(100% / 7);
+        box-sizing: border-box;
+        margin-left:-1px;
+        margin-top:-1px;
+
+    }
+.calendar{
+    display:flex;
+    flex-wrap: wrap;
+    width:50%;
+    margin-left:1px;
+    margin-top:1px;
+}
+
+</style>
+<div class='calendar'>
+<div>日</div>
+<div>一</div>
+<div>二</div>
+<div>三</div>
+<div>四</div>
+<div>五</div>
+<div>六</div>
+<?php
+for($i=0;$i<count($days);$i++){
+    echo "<div> {$days[$i]} </div>";
+}
+
+?>
+
+    
+</div>
