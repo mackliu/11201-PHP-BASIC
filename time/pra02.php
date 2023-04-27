@@ -53,7 +53,8 @@ for($i=0;$i<$weeks;$i++){
     //使用迴圈來畫出當周的天數
     for($j=0;$j<7;$j++){
         echo "<td>";
-        if(($i==0 && $j<$firstDateWeek) || (($i==$weeks-1) && $j>$finalDateWeek)){  //判斷當周是否為第一周
+        //判斷當周是否為第一周或最後一周
+        if(($i==0 && $j<$firstDateWeek) || (($i==$weeks-1) && $j>$finalDateWeek)){
             echo '&nbsp';
         }else{
             echo $j+7*$i-$firstWeekSpace;
@@ -63,3 +64,47 @@ for($i=0;$i<$weeks;$i++){
     echo "</tr>";
 }
 echo "</table>";
+
+//使用陣列來繪製月曆
+
+
+//先畫出固定的表頭內容
+
+$days=[];
+
+//使用迴圈來畫出當前月的周數
+for($i=0;$i<$weeks;$i++){
+    //使用迴圈來畫出當周的天數
+    for($j=0;$j<7;$j++){
+        //判斷當周是否為第一周或最後一周
+        if(($i==0 && $j<$firstDateWeek) || (($i==$weeks-1) && $j>$finalDateWeek)){
+            $days[]='&nbsp';
+        }else{
+            $days[]=$j+7*$i-$firstWeekSpace;
+        }
+    }
+}
+
+/* echo "<pre>";
+print_r($days);
+echo "<pre>"; */
+
+echo "<table>";
+echo "<tr>";
+echo "<td>日</td>";
+echo "<td>一</td>";
+echo "<td>二</td>";
+echo "<td>三</td>";
+echo "<td>四</td>";
+echo "<td>五</td>";
+echo "<td>六</td>";
+echo "</tr>";
+for($i=0;$i<count($days);$i++){
+    echo ($i%7==0)?"<tr>":'';
+    echo "<td>";
+    echo $days[$i];
+    echo "</td>";
+    echo ($i%7==6)?"</tr>":'';
+}
+echo "</table>";
+
