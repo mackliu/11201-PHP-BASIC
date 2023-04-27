@@ -45,6 +45,7 @@ echo "<td>五</td>";
 echo "<td>六</td>";
 echo "</tr>";
 
+
 //使用迴圈來畫出當前月的周數
 for($i=0;$i<$weeks;$i++){
     echo "<tr>";
@@ -52,33 +53,9 @@ for($i=0;$i<$weeks;$i++){
     //使用迴圈來畫出當周的天數
     for($j=0;$j<7;$j++){
         echo "<td>";
-        if($i==0){  //判斷當周是否為第一周
-
-            echo ($j<$firstDateWeek)?'&nbsp':$j+7*$i-$firstWeekSpace;
-            /* if($j<$firstDateWeek){ //如果$j比第1天的星期小，則印出空白日
-                echo "&nbsp;";
-            }else{
-
-                //如果$j比第1天的星期大，則印出日期
-                //日期的公式為 (當周天數-周數*7-第一周的空白日數)
-                echo $j+7*$i-$firstWeekSpace;
-            } */
-        }else if($i==$weeks-1){ //判斷當周是否為最後一周
-
-            echo ($j>$finalDateWeek)?"&nbsp;":$j+7*$i-$firstWeekSpace;
-
-            /* if($j>$finalDateWeek){  //如果$j比最後一天的星期大，則印出空白日
-                echo "&nbsp;";
-            }else{
-
-                //如果$j比最後1天的星期大，則印出日期
-                //日期的公式為 (當周天數-周數*7-第一周的空白日數)
-                echo $j+7*$i-$firstWeekSpace;
-            } */
+        if(($i==0 && $j<$firstDateWeek) || (($i==$weeks-1) && $j>$finalDateWeek)){  //判斷當周是否為第一周
+            echo '&nbsp';
         }else{
-
-            //如果$i不是第一周或最後一周，則印出日期
-            //日期的公式為 (當周天數-周數*7-第一周的空白日數)
             echo $j+7*$i-$firstWeekSpace;
         }
         echo "</td>";
